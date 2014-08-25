@@ -9,15 +9,15 @@ RUN apt-get upgrade -y
 # Install depndencies
 RUN apt-get install -y build-essential ruby1.9.1-dev
 
-COPY . /src
-
-# Install Octopress dependencies
-WORKDIR /src
+# Install bundler
 RUN gem install bundler
-RUN gem install RedCloth -v '4.2.9'
+
+COPY . /src
+WORKDIR /src
 RUN bundle install
 
 # Expose default Octopress port
 EXPOSE 4000
 
-CMD export LC_ALL=en_US.UTF-8 && rake preview
+# PARTY!
+CMD export LC_ALL=en_US.UTF-8 && /bin/bash
