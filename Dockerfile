@@ -12,10 +12,6 @@ RUN apt-get install -y build-essential ruby1.9.1-dev
 # Install bundler
 RUN gem install bundler
 
-COPY . /src
-WORKDIR /src
-RUN bundle install
-
 # Expose default Octopress port
 EXPOSE 4000
 
