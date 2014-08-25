@@ -8,6 +8,7 @@ RUN apt-get upgrade -y
 
 # Install depndencies
 RUN apt-get install -y build-essential ruby1.9.1-dev python2.7
+RUN locale-gen en_US en_US.UTF-8
 
 # Install bundler
 RUN gem install bundler
